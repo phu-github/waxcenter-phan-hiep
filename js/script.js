@@ -1,5 +1,4 @@
 $(function() {
-    var $pane = $('.wrapper__bnf__carosel');
     if ( $(window).width() < 768 ) {
         startCarousel();
     } else {
