@@ -37,5 +37,14 @@ $(function() {
         var owl = $('.owl-carousel');
         owl.trigger('destroy.owl.carousel');
         owl.addClass('off');
-      }
+    }
+
+    // accordion
+    const accordion = document.getElementsByClassName('container');
+
+    for (i=0; i<accordion.length; i++) {
+    accordion[i].addEventListener('click', function () {
+        this.classList.toggle('active')
+    })
+    }
 });
