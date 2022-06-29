@@ -40,11 +40,29 @@ $(function() {
     }
 
     // accordion
-    const accordion = document.getElementsByClassName('container');
+    // $(".container").click(function() {
+    //     $(this).toggleClass("active");
+    // });
 
-    for (i=0; i<accordion.length; i++) {
-    accordion[i].addEventListener('click', function () {
-        this.classList.toggle('active')
-    })
+    const accordion = document.getElementsByClassName('container');
+    Array.from(accordion).forEach((item, index) => {
+        item.addEventListener('click', function () {
+            removeActive(index);
+            this.classList.toggle('active');
+        })
+    });
+    // for (i=0; i<accordion.length; i++) {
+    //     accordion[i].addEventListener('click', function () {
+    //         this.classList.toggle('active');
+    //         removeActive(i);
+    //     })
+    // }
+    function removeActive(index){
+        console.log("index ===", index )
+        Array.from(accordion).forEach((item2, index2) => {
+            if( index != index2){
+                item2.classList.remove('active');
+            }
+        });
     }
 });

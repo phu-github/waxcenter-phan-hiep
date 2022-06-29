@@ -185,67 +185,101 @@
 
 /* accordion */
 .accordion {
-    width: 800px;
-    margin: 90px auto;
-    color: black;
+    width: 75%;
+    margin: 77px auto;
     background-color: white;
-    padding: 45px 45px;
+    padding: 0px 0px;
 }
 .accordion .container {
     position: relative;
-    margin: 10px 10px;
+    margin: 0;
 }
   
   /* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
   
 .accordion .label {
 position: relative;
-padding: 10px 0;
+padding: 15px 0px 15px 35px;
 font-size: 30px;
 color: black;
 cursor: pointer;
 }
-.accordion .label::before {
-    content: '+';
-    color: black;
+.acc-arrow{
     position: absolute;
-    top: 50%;
-    right: -5px;
-    font-size: 30px;
-    transform: translateY(-50%);
-  }
-  
+    top: 24px;
+    left: 98%;
+}
+.accordion .label .acc-arrow::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background: #000;
+    -webkit-transform: rotate(45deg) translate(0,13px);
+    -ms-transform: rotate(45deg) translate(0,13px);
+    transform: rotate(45deg) translate(0,13px);
+}
+.accordion .label .acc-arrow::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background: #000;
+    -webkit-transform: rotate(135deg) translate(7px,-6px);
+    -ms-transform: rotate(135deg) translate(7px,-6px);
+    transform: rotate(135deg) translate(7px,-6px);
+}
 /* Hides the content (height: 0), decreases font size, justifies text and adds transition */
 
 .accordion .content {
     position: relative;
     background: white;
-    height: 0;
+    max-height: 0;
     font-size: 20px;
     text-align: justify;
-    width: 780px;
     overflow: hidden;
-    transition: 0.5s;
+    transition: 1s;
+}
+.accordion .content p{
+    width: 94%;
+    padding: 15px 0 15px 60px;
 }
 
 /* Adds a horizontal line between the contents */
 
 .accordion hr {
     width: 100;
-    margin-left: 0;
-    border: 1px solid grey;
+    margin: 0;
+    border: 1px solid rgb(206, 206, 206);
+
 }
 /* Unhides the content part when active. Sets the height */
 
 .accordion .container.active .content {
-    height: 150px;
+    max-height: 500px;
 }
 
 /* Changes from plus sign to negative sign once active */
 
-.accordion .container.active .label::before {
-    content: '-';
-    font-size: 30px;
+.accordion .container.active .label .acc-arrow::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background: #000;
+    -webkit-transform: rotate(135deg) translate(13px,1px);
+    -ms-transform: rotate(135deg) translate(13px,1px);
+    transform: rotate(135deg) translate(13px,1px);
+}
+.accordion .container.active .label .acc-arrow::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background: #000;
+    -webkit-transform: rotate(45deg) translate(4px,8px);
+    -ms-transform: rotate(45deg) translate(4px,8px);
+    transform: rotate(45deg) translate(4px,8px);
 }
 body{
     margin: 0 !important;
@@ -319,7 +353,7 @@ body{
     color:#2c0f44;
     font-weight: 700;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 0px;
     font-family: neue haas unica!important;
 }
@@ -653,8 +687,14 @@ body{
         overflow-y: scroll;
     }
     .wrapper__banner__items ul{
-        justify-content: flex-center;
-        column-gap: 16px;
+        justify-content: start;
+        column-gap: 59px;
+    }
+    .wrapper__banner__items ul li:first-child{
+        padding-left: 50px;
+    }
+    .wrapper__banner__items ul li:last-child{
+        padding-right: 50px;
     }
     .wrapper__type__top{
         padding-top: 27px;
@@ -901,6 +941,26 @@ body{
             "item4" auto
             "item5" auto
             /1fr;
+    }
+    .accordion {
+        width: 100%;
+        padding: 0px 5%;
+        margin: 52px auto;
+    }
+    .accordion .label {
+        padding: 15px 0px 15px 0px;
+    }
+    .accordion .label p {
+        width: 85%;
+        padding-left: 30px;
+    }
+    .accordion .content p {
+        width: 98%;
+        padding: 15px 0 15px 0px;
+        text-align: unset;
+    }
+    .acc-arrow {
+        top: 22px;
     }
 }
 /* Responsive for small device*/
