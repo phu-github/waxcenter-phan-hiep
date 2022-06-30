@@ -986,10 +986,11 @@ body{
     #wrapper__map{
         height: 500px;
         flex-direction: column-reverse;
+        justify-content: flex-end;
     }
     .wrapper__map_left{
         width: 100%;
-        height: auto;
+        height: 376px;
     }
     .wrapper__map_right{
         width: 100%;
