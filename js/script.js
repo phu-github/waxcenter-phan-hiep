@@ -40,10 +40,6 @@ $(function() {
     }
 
     // accordion
-    // $(".container").click(function() {
-    //     $(this).toggleClass("active");
-    // });
-
     const accordion = document.getElementsByClassName('container');
     Array.from(accordion).forEach((item, index) => {
         item.addEventListener('click', function () {
@@ -51,12 +47,6 @@ $(function() {
             this.classList.toggle('active');
         })
     });
-    // for (i=0; i<accordion.length; i++) {
-    //     accordion[i].addEventListener('click', function () {
-    //         this.classList.toggle('active');
-    //         removeActive(i);
-    //     })
-    // }
     function removeActive(index){
         console.log("index ===", index )
         Array.from(accordion).forEach((item2, index2) => {
@@ -65,4 +55,30 @@ $(function() {
             }
         });
     }
+    // scroll element
+    $("#scroll-types").click(function (){
+        $('html, body').animate({
+            scrollTop: $('#wrapper__type').offset().top
+        }, 2000);
+    });
+    $("#scroll-benefits").click(function (){
+        $('html, body').animate({
+            scrollTop: $('#wrapper__bnf').offset().top
+        }, 2000);
+    });
+    $("#scroll-experience").click(function (){
+        $('html, body').animate({
+            scrollTop: $('#wrapper__exp').offset().top
+        }, 2000);
+    });
+    $("#scroll-aftercare").click(function (){
+        $('html, body').animate({
+            scrollTop: $('#wrapper__care').offset().top
+        }, 2000);
+    });
+    $("#scroll-faq").click(function (){
+        $('html, body').animate({
+            scrollTop: $('.wrapper__faqs').offset().top
+        }, 2000);
+    });
 });
