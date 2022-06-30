@@ -984,7 +984,7 @@ body{
         left: 95%;
     }
     #wrapper__map{
-        height: auto;
+        height: 500px;
         flex-direction: column-reverse;
     }
     .wrapper__map_left{
